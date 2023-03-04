@@ -1,0 +1,140 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ product.name }}{% endblock %}
+
+{% block content %}
+<div class="medium-content" id="medium-content">
+    <a href="/index.html" class="top-links">Главная</a> /
+    <a href="/pages/podarok.html" class="top-links">Подарки</a> /
+    <a href="#" class="top-un-links">Название подарка</a>
+    <!-- part of product image and description, color, size, weight -->
+    <div class="into-product">
+        <div class="product-into-images">
+            <img src="{{ product.image.url }}" class="main-img" alt="{{ product.name }}">
+            <div class="three-part-images">
+                <img src="/images/divan-1.png" alt="divan-part-1">
+                <img src="/images/divan-2.png" alt="divan-part-2">
+                <img src="/images/divan-3.png" alt="divan-part-3">
+                <img src="/images/divan-4.png" alt="divan-part-4">
+            </div>
+        </div>
+        <div class="product-into-sizes">
+            <strong>{{ product.name }}</strong>
+            <div class="common-product-ch">
+                <div class="size-of-product">
+                    <span>РАЗМЕРЫ</span>
+                    <p>{{ product.size }}</p> <br>
+                    <span>МАТЕРИАЛ</span>
+                    <p>{{ product.material }}</p> <br>
+                    <span>ВЕС: {{ product.weight }}</span>
+                </div>
+                <div class="color-picker-pr">
+                    <p class="title-colorlist">
+                        Цвета в наличии
+                    </p>
+                    <div class="colorList-1">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                    </div>
+                    <div class="colorList-2">
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                    </div>
+                    <div class="colorList-3">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <br>
+            <span class="from-price">От <strong>{{ product.price }}</strong></span>
+            <br>
+            <br>
+            <button class="ordering" id="zakaz-button">Заказать</button>
+        </div>
+    </div>
+    <div class="ending-description">
+        <strong>Описание</strong>
+        {{ product.description | safe }}
+    </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/product.js' %}"></script>
+<script>
+    // Modall
+    // Get the modal
+    var modal = document.getElementById("myModal");
+    var modal2 = document.getElementById("my2Modal");
+    var modalZakaz = document.getElementById("myZakazModal")
+
+
+    // Get the button that opens the modal
+    var zakazBtn = document.getElementById("zakaz-button");
+    var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("my2Btn");
+
+    var btnVertical = document.getElementById("myBtnVerticalBenedict");
+    var btn2Vertical = document.getElementById("my2BtnVerticalBenedict");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close2")[0];
+    var span3 = document.getElementsByClassName("close-zakaz")[0];
+
+    // Open modal for Orders after selecting
+    zakazBtn.onclick = function () {
+        modalZakaz.style.display = "block"
+    }
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+    }
+    // When the user clicks the button, open the modal  (2)
+    btnVertical.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2Vertical.onclick = function () {
+        modal2.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    }
+    span3.onclick = function () {
+        modalZakaz.style.display = "none";
+    }
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modalZakaz) {
+            modalZakaz.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}

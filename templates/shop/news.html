@@ -1,0 +1,39 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ new.name }}{% endblock %}
+
+{% block content %}
+<div class="medium-content" id="medium-content">
+    <a href="/index.html" class="top-links">Главная</a> /
+    <a href="/pages/news-page.html" class="top-links">Новости</a>
+    <br>
+    <div class="benedict-content">
+        <h2 class="starting-text">{{ new.name }}</h2> <br>
+        {{ new.content | safe }}
+    </div>
+    {% if news %}
+        <h4 class="text-center">Другие новости</h4>
+        <div class="news-section" id="news-items">
+            {% for item in news %}
+            <div class="card">
+                <a href="">
+                    <img src="{{ item.image.url }}" alt="{{ item.name }}">
+                </a>
+                <div class="data-part">
+                    <span class="data#">#новости</span>
+                    <p class="data-number">{{ item.created_at | date:"d M Y" }}</p>
+                </div>
+                <h2>{{ item.name }}</h2>
+                <p>{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/news.js' %}"></script>
+{% endblock %}

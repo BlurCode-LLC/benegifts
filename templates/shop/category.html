@@ -1,0 +1,532 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %}{{ category }}{% endblock %}
+
+{% block content %}
+<div class="medium-content" id="medium-content">
+    <a href="/index.html" class="top-links">Главная</a> /
+    <a href="/pages/news-page.html" class="top-links">Новости</a>
+    <br>
+    <!-- When mobile size is be active, this toggle is be active momentally -->
+    <button onclick="myCatalogyDrop()" class="button-catalog">Выбрать категорию</button>
+    <div class="catalog-tovarov">
+        <div class="sidebar-menu" id="catalogy-tovarov">
+            <div class="accordion">
+                <h2 class="catalog-title">Категории</h2>
+                <hr>
+                <div class="accordion-content">
+                    <div class="header" id="header">
+                        <span class="title">Наборы</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="#biznerNabor" id="defaultOpen" class="descript-link"
+                                onclick="openButton(event, 'biznesNabor')">Бизнес наборы</a></li>
+                        <li><a href="#dorojniyNabor" class="descript-link"
+                                onclick="openButton(event, 'dorojniyNabor')">Дорожные наборы</a></li>
+                        <li><a href="#nabor-termokrujki" class="descript-link"
+                                onclick="openButton(event, 'nabor-termokrujki')">Наборы с термокружками</a></li>
+                        <li><a href="#nabor-akkamulyator" class="descript-link"
+                                onclick="openButton(event, 'nabor-akkamulyator')">Наборы с аккумуляторами</a></li>
+                        <li><a href="#nabor-fleshkami" class="descript-link"
+                                onclick="openButton(event, 'nabor-fleshkami')">Наборы с флешками</a></li>
+                        <li><a href="javascript:void(0)">Наборы с колонками</a></li>
+                        <li><a href="javascript:void(0)">Наборы с книгами</a></li>
+                        <li><a href="javascript:void(0)">Наборы с мультитулами</a></li>
+                        <li><a href="javascript:void(0)">Винные наборы</a></li>
+                        <li><a href="javascript:void(0)">Наборы для сыра</a></li>
+                        <li><a href="javascript:void(0)">Наборы для водки</a></li>
+                        <li><a href="javascript:void(0)">Наборы для виски</a></li>
+                        <li><a href="javascript:void(0)">Продуктовые наборы</a></li>
+                        <li><a href="javascript:void(0)">Наборы с медом</a></li>
+                        <li><a href="javascript:void(0)">Наборы с вареньем</a></li>
+                        <li><a href="javascript:void(0)">Наборы с чаем</a></li>
+                        <li><a href="javascript:void(0)">Наборы с кофе</a></li>
+                        <li><a href="javascript:void(0)">Наборы для выращивания</a></li>
+                        <li><a href="javascript:void(0)">Наборы для мужчин</a></li>
+                        <li><a href="javascript:void(0)">Наборы для женщин</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Одежда</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Футболки</a></li>
+                        <li><a href="javascript:void(0)">Рубашки поло</a></li>
+                        <li><a href="javascript:void(0)">Футболки для промо</a></li>
+                        <li><a href="javascript:void(0)">Кепки и бейсболки</a></li>
+                        <li><a href="javascript:void(0)">Панамы</a></li>
+                        <li><a href="javascript:void(0)">Ветровки</a></li>
+                        <li><a href="javascript:void(0)">Дождевики</a></li>
+                        <li><a href="javascript:void(0)">Куртки</a></li>
+                        <li><a href="javascript:void(0)">Толстовки</a></li>
+                        <li><a href="javascript:void(0)">Шарфы</a></li>
+                        <li><a href="javascript:void(0)">Трикотажные шапки</a></li>
+                        <li><a href="javascript:void(0)">Вязаные комплекты</a></li>
+                        <li><a href="javascript:void(0)">Джемперы</a></li>
+                        <li><a href="javascript:void(0)">Жилеты</a></li>
+                        <li><a href="javascript:void(0)">Офисные рубашки</a></li>
+                        <li><a href="javascript:void(0)">Рабочая одежда</a></li>
+                        <li><a href="javascript:void(0)">Фартуки</a></li>
+                        <li><a href="javascript:void(0)">Халаты</a></li>
+                        <li><a href="javascript:void(0)">Спортивная одежда</a></li>
+                        <li><a href="javascript:void(0)">Детская одежда</a></li>
+                        <li><a href="javascript:void(0)">Аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Вязание на заказ</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Изделия из Кожи</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Ежедневники</a></li>
+                        <li><a href="javascript:void(0)">Блокноты</a></li>
+                        <li><a href="javascript:void(0)">Сумки</a></li>
+                        <li><a href="javascript:void(0)">Портмоне</a></li>
+                        <li><a href="javascript:void(0)">Тревел портмоне</a></li>
+                        <li><a href="javascript:void(0)">Кошельки</a></li>
+                        <li><a href="javascript:void(0)">Дорожные сумки</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Коробки, Упаковка</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Коробки</a></li>
+                        <li><a href="javascript:void(0)">Упаковка</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Термосы, кружки, посуда</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Кружки</a></li>
+                        <li><a href="javascript:void(0)">Бокалы</a></li>
+                        <li><a href="javascript:void(0)">Чайные наборы</a></li>
+                        <li><a href="javascript:void(0)">Кофейные наборы</a></li>
+                        <li><a href="javascript:void(0)">Столовые тарелки</a></li>
+                        <li><a href="javascript:void(0)">Термокружки</a></li>
+                        <li><a href="javascript:void(0)">Термосы</a></li>
+                        <li><a href="javascript:void(0)">Бутылки для воды</a></li>
+                        <li><a href="javascript:void(0)">Фляжки</a></li>
+                        <li><a href="javascript:void(0)">Ланчбоксы</a></li>
+                        <li><a href="javascript:void(0)">Кухонные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Разделочные доски</a></li>
+                        <li><a href="javascript:void(0)">Барные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Предметы сервировки</a></li>
+                        <li><a href="javascript:void(0)">Заварочные чайники</a></li>
+                        <li><a href="javascript:void(0)">Кувшины и графины</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Сладкие наборы</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Чайные наборы</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Электроника</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Флешки</a></li>
+                        <li><a href="javascript:void(0)">Внешние аккумуляторы</a></li>
+                        <li><a href="javascript:void(0)">Внешние жёсткие диски</a></li>
+                        <li><a href="javascript:void(0)">Портативная акустика</a></li>
+                        <li><a href="javascript:void(0)">Наушники</a></li>
+                        <li><a href="javascript:void(0)">Компьютерные и мобильные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Бытовая техника</a></li>
+                        <li><a href="javascript:void(0)">Лампы и светильники</a></li>
+                        <li><a href="javascript:void(0)">Зарядные устройства</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Ручки, пиш-е инструменты</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Пластиковые ручки</a></li>
+                        <li><a href="javascript:void(0)">Металлические ручки</a></li>
+                        <li><a href="javascript:void(0)">Древянные ручки</a></li>
+                        <li><a href="javascript:void(0)">Карандаши</a></li>
+                        <li><a href="javascript:void(0)">Текстовыделители</a></li>
+                        <li><a href="javascript:void(0)">Футляры для ручек</a></li>
+                        <li><a href="javascript:void(0)">Наборы с ручками</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Часы</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Часы настольные</a></li>
+                        <li><a href="javascript:void(0)">Часы миниатюры</a></li>
+                        <li><a href="javascript:void(0)">Часы наградные</a></li>
+                        <li><a href="javascript:void(0)">Погодные станции, термометры</a></li>
+                        <li><a href="javascript:void(0)">Часы наручнве</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Брелоки</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Металлические</a></li>
+                        <li><a href="javascript:void(0)">Пластиковые</a></li>
+                        <li><a href="javascript:void(0)">Брелоки-открывалки</a></li>
+                        <li><a href="javascript:void(0)">Деревянные</a></li>
+                        <li><a href="javascript:void(0)">Деревянные</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Ежедневники и блокноты</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Ежедневник калькулятор</a></li>
+                        <li><a href="javascript:void(0)">Оригинальные ежедневники</a></li>
+                        <li><a href="javascript:void(0)">Блокноты</a></li>
+                        <li><a href="javascript:void(0)">Наборы с ежедневниками</a></li>
+                        <li><a href="javascript:void(0)">Упаковка для ежедневников</a></li>
+                        <li><a href="javascript:void(0)">Ежедневники на заказ</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Корпоративные подарки</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Настольные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Часы и метеостанции</a></li>
+                        <li><a href="javascript:void(0)">Кошельки</a></li>
+                        <li><a href="javascript:void(0)">Визитницы</a></li>
+                        <li><a href="javascript:void(0)">Чехлы для карт</a></li>
+                        <li><a href="javascript:void(0)">Ключницы</a></li>
+                        <li><a href="javascript:void(0)">Дорожные органайзеры</a></li>
+                        <li><a href="javascript:void(0)">Обложки для документов</a></li>
+                        <li><a href="javascript:void(0)">Чехлы для планшетов</a></li>
+                        <li><a href="javascript:void(0)">Папки, портфели</a></li>
+                        <li><a href="javascript:void(0)">Подарочные книги</a></li>
+                        <li><a href="javascript:void(0)">Коллекционные товары</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Сумки, рюкзаки</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Сумки для ноутбука</a></li>
+                        <li><a href="javascript:void(0)">Рюкзаки</a></li>
+                        <li><a href="javascript:void(0)">Сумки для документов</a></li>
+                        <li><a href="javascript:void(0)">Сумки для покупок</a></li>
+                        <li><a href="javascript:void(0)">Спортивные сумки</a></li>
+                        <li><a href="javascript:void(0)">Дорожные сумки</a></li>
+                        <li><a href="javascript:void(0)">Чемоданы</a></li>
+                        <li><a href="javascript:void(0)">Несессеры и косметички</a></li>
+                        <li><a href="javascript:void(0)">Сумки для пикника</a></li>
+                        <li><a href="javascript:void(0)">Чехлы для планшета</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Товары для дома и офиса</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Офисные игры</a></li>
+                        <li><a href="javascript:void(0)">Настольные принадлежности</a></li>
+                        <li><a href="javascript:void(0)">Бювары</a></li>
+                        <li><a href="javascript:void(0)">Мебель в офис</a></li>
+                        <li><a href="javascript:void(0)">Техника в офис</a></li>
+                        <li><a href="javascript:void(0)">Умный офис</a></li>
+                        <li><a href="javascript:void(0)">Коллекционные вещи</a></li>
+                        <li><a href="javascript:void(0)">Изделия из дерева</a></li>
+                        <li><a href="javascript:void(0)">Изделия из металла</a></li>
+                        <li><a href="javascript:void(0)">Изделия из кожи</a></li>
+                        <li><a href="javascript:void(0)">Подарки руководителю</a></li>
+                        <li><a href="javascript:void(0)">Кофе&Чай</a></li>
+                        <li><a href="javascript:void(0)">Дизайн офиса</a></li>
+                        <li><a href="javascript:void(0)">Офис под ключ</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Отдых, Спорт</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Товары для путешествий</a></li>
+                        <li><a href="javascript:void(0)">Автомобильные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Дорожные подушки</a></li>
+                        <li><a href="javascript:void(0)">Наборы для пикников</a></li>
+                        <li><a href="javascript:void(0)">Турисчтические принадлежности</a></li>
+                        <li><a href="javascript:void(0)">Складные ножи и мультитулы</a></li>
+                        <li><a href="javascript:void(0)">Инструменты</a></li>
+                        <li><a href="javascript:void(0)">Игры и головоломки</a></li>
+                        <li><a href="javascript:void(0)">Спортивные товары</a></li>
+                        <li><a href="javascript:void(0)">Мячи</a></li>
+                        <li><a href="javascript:void(0)">Подарки для дачи</a></li>
+                        <li><a href="javascript:void(0)">Пляжный отдых</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Стеллы, Награды,
+                            Промосупениры</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Наградные стелы</a></li>
+                        <li><a href="javascript:void(0)">Плакетки и панно</a></li>
+                        <li><a href="javascript:void(0)">Кубки и медали</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Праздники</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">День Победы 9 мая</a></li>
+                        <li><a href="javascript:void(0)">День электросвязи 17 мая</a></li>
+                        <li><a href="javascript:void(0)">День химика</a></li>
+                        <li><a href="javascript:void(0)">Подарки для детей</a></li>
+                        <li><a href="javascript:void(0)">Подарок коллеге</a></li>
+                        <li><a href="javascript:void(0)">Подарки начальнику</a></li>
+                        <li><a href="javascript:void(0)">Подарки на День рождения компании</a></li>
+                        <li><a href="javascript:void(0)">Подарки военным</a></li>
+                        <li><a href="javascript:void(0)">Подарки морякам</a></li>
+                        <li><a href="javascript:void(0)">Эко-подарки</a></li>
+                        <li><a href="javascript:void(0)">День России 12 июня</a></li>
+                        <li><a href="javascript:void(0)">День медика</a></li>
+                        <li><a href="javascript:void(0)">День металлурга</a></li>
+                        <li><a href="javascript:void(0)">Подарки сисадминам</a></li>
+                        <li><a href="javascript:void(0)">День железнодорожника</a></li>
+                        <!--  -->
+                        <li><a href="javascript:void(0)">День строителя</a></li>
+                        <li><a href="javascript:void(0)">День шахтёра</a></li>
+                        <li><a href="javascript:void(0)">День знаний 1 сентября</a></li>
+                        <li><a href="javascript:void(0)">День нефтянки</a></li>
+                        <li><a href="javascript:void(0)">Подарки программистам</a></li>
+                        <li><a href="javascript:void(0)">День учителя 5 октября</a></li>
+                        <li><a href="javascript:void(0)">Подарки автомобилисту</a></li>
+                        <li><a href="javascript:void(0)">День полиции (милиции) 10 ноября</a></li>
+                        <li><a href="javascript:void(0)">День банковского работника 2 декабря</a></li>
+                        <li><a href="javascript:void(0)">День юриста 3 декабря</a></li>
+                        <li><a href="javascript:void(0)">День энергетики 22 декабря</a></li>
+                        <li><a href="javascript:void(0)">День авиации 14 февраля</a></li>
+                        <li><a href="javascript:void(0)">23 февраля</a></li>
+                        <li><a href="javascript:void(0)">8 марта</a></li>
+                        <li><a href="javascript:void(0)">День геолога</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Зонты</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Зонты-трости</a></li>
+                        <li><a href="javascript:void(0)">Складные зонты</a></li>
+                        <li><a href="javascript:void(0)">Необычные и оригинальные щонты</a></li>
+                    </ul>
+                </div>
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">VIP подарки</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Аксессуары для дома</a></li>
+                        <li><a href="javascript:void(0)">Личные аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Интеллектуальные подарки</a></li>
+                        <li><a href="javascript:void(0)">Аксессуары для путешествий</a></li>
+                        <li><a href="javascript:void(0)">Аксессуары для алкогольных напитков</a></li>
+                        <li><a href="javascript:void(0)">Пишущие инстурменты</a></li>
+                        <!--  -->
+                        <li><a href="javascript:void(0)">Подарки в русском стиле</a></li>
+                        <li><a href="javascript:void(0)">Портфели и сумки</a></li>
+                        <li><a href="javascript:void(0)">Профессиональные подарки</a></li>
+                        <li><a href="javascript:void(0)">Мячи</a></li>
+                        <li><a href="javascript:void(0)">Новогодние подарки</a></li>
+                        <li><a href="javascript:void(0)">Кофейные наборы</a></li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Распродажа</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Текстиль B&C</a></li>
+                        <li><a href="javascript:void(0)">Письменные принадлежности</a></li>
+                        <li><a href="javascript:void(0)">Посуда</a></li>
+                        <li><a href="javascript:void(0)">Отдых и путешествие</a></li>
+                        <li><a href="javascript:void(0)">Подарки для женщин</a></li>
+                        <li><a href="javascript:void(0)">Подарки для мужчин</a></li>
+                        <!--  -->
+                        <li><a href="javascript:void(0)">Электроника</a></li>
+                        <li><a href="javascript:void(0)">Офис</a></li>
+                        <li><a href="javascript:void(0)">Часы</a></li>
+                        <li><a href="javascript:void(0)">Аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Предметы интерьера</a></li>
+                        <li><a href="javascript:void(0)">Наборы для вина</a></li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Женские аксессуары</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Женские аксессуары</a></li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Мужские аксессуары</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                        <li><a href="javascript:void(0)">Мужские аксессуары</a></li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Товары для автомобиля</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                        <li><a href="javascript:void(0)">Товары для автомобиля</a></li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="accordion-content">
+                    <div class="header">
+                        <span class="title">Наружная и Digital реклама</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                    <ul class="description">
+                        <li><a href="javascript:void(0)">Объёмные буквы</a></li>
+                        <li><a href="javascript:void(0)">Выставочные стенды</a></li>
+                        <li><a href="javascript:void(0)">LED мониторы</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="tovar-menu">
+            <div id="biznesNabor" class="tovar-content">
+                <h3 class="nabori-title">{{ category.name }}</h3>
+                <div class="vid-tovara">
+                    {% for product in products %}
+                        <a href="{% url 'shop:product' slug=product.slug %}" class="tovar-list-url">
+                            <div class="tovar-img">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                            <div class="tovar-opisanie">
+                                <span class="name-of-tovar">{{ product.name }}</span>
+                                <span class="price-of-tovar">от {{ product.price }}</span>
+                            </div>
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/category.js' %}"></script>
+<script>
+    var modal = document.getElementById("myModal");
+    var modal2 = document.getElementById("my2Modal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("my2Btn");
+
+    var btnVertical = document.getElementById("myBtnVerticalTovar");
+    var btn2Vertical = document.getElementById("my2BtnVerticalTovar");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close2")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+    }
+    // When the user clicks the button, open the modal  (2)
+    btnVertical.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2Vertical.onclick = function () {
+        modal2.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}

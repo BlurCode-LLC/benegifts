@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benegifts - {% block title %}{% endblock %}</title>
+    <!-- Style css connect -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Button categories css -->
+    <link rel="stylesheet" href="{% static 'css/button.css' %}">
+    <!-- Media query -->
+    <link rel="stylesheet" href="{% static 'css/media.css' %}">
+    <!-- Flicky -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header section -->
+        {% include 'layout/navbar.html' %}
+        {% include 'layout/header.html' %}
+        {% block content %}{% endblock %}
+        {% include 'layout/footer.html' %}
+        {% include 'layout/modals.html' %}
+    </div>
+
+    <!-- slider code js (connect) -->
+    <script src="{% static 'js/carousel.js' %}"></script>
+    <!-- Button categories -->
+    <script src="{% static 'js/toggle-menu.js' %}"></script>
+    <script src="{% static 'js/swiper-bundle.min.js' %}"></script>
+    <script>
+        function openForm() {
+            document.getElementById("formDiler").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("formDiler").style.display = "none";
+        }
+    </script>
+    {% block script %}{% endblock %}
+</body>
+
+</html>

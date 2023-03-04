@@ -1,0 +1,118 @@
+{% extends 'layout/base.html' %}
+
+{% load static %}
+
+{% block title %}Benetex{% endblock %}
+
+{% block content %}
+<div class="container">
+
+
+    <div class="medium-content" id="medium-content">
+        <a href="/index.html" class="top-links">Главная</a> /
+        <a href="/pages/news-page.html" class="top-links">Новости</a>
+        <br>
+        <a href="#" class="benedict-url">
+            <img src="/images/Benetex.png" alt="">
+        </a>
+        <div class="benedict-content">
+            <h2 class="starting-text">Benedict</h2> <br>
+            <p class="starting-content">
+                Новый год встретили, идет активная подготовка к 23 февраля и 8 марта! Атмосфера <br>
+                праздника предвкушение новых выходных дней приносят с собой дополнительную <br> нагрузку на работе и
+                режим
+                “успеть все”.
+            </p> <br>
+            <p class="starting-content">
+                В стрессовых условиях главное сохранять спокойствие! В этом поможет <br>
+                своевременный перерыв на кофе, аффирмации и увлажнитель воздуха “Pebble”.
+            </p> <br>
+            <p class="starting-content">
+                С наступлением отопительного сезона влажность падает до 30%. Это становится <br>
+                причиной плохого самочувствия, рассеянного внимания и быстрой утомляемости.
+            </p> <br>
+            <p class="starting-content">
+                “Pebble” буквально тот самый глоток свежего воздуха! Увлажнитель создаст <br>
+                комфортные условия для работы в офисе и для спокойного отдыха дома.
+            </p> <br>
+            <p class="starting-content">
+                Экодизайн, встроенная подсветка, компактный размер - совершенный <br>
+                комбо-набор для любого интерьера и помещения. Площадь работы увлажнителя - <br>
+                до 20 м2.
+            </p> <br>
+            <p class="starting-content">
+                200 штук в наличии <br>
+                “Pebble”- поможет пережить длительные холода без стресса!
+            </p> <br>
+        </div>
+        <h2 class="production-text">
+            Продукция
+        </h2>
+
+        <div class="view-cards">
+            <img src="/images/view-production.png" alt="View production card 1">
+            <img src="/images/view-production.png" alt="View production card 2">
+            <img src="/images/view-production.png" alt="View production card 3">
+        </div>
+        <button type="button" class="view-button">Посмотреть продукцию</button>
+    </div>
+
+    {% include 'layout/call.html' %}
+
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/benetex.js' %}"></script>
+<script>
+    var modal = document.getElementById("myModal");
+    var modal2 = document.getElementById("my2Modal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+    var btn2 = document.getElementById("my2Btn");
+
+    var btnVertical = document.getElementById("myBtnVerticalTovar");
+    var btn2Vertical = document.getElementById("my2BtnVerticalTovar");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+    var span2 = document.getElementsByClassName("close2")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2.onclick = function () {
+        modal2.style.display = "block";
+    }
+    // When the user clicks the button, open the modal  (2)
+    btnVertical.onclick = function () {
+        modal.style.display = "block";
+    }
+    btn2Vertical.onclick = function () {
+        modal2.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+    span2.onclick = function () {
+        modal2.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+    window.onclick = function (event) {
+        if (event.target == modal2) {
+            modal2.style.display = "none";
+        }
+    }
+</script>
+{% endblock %}

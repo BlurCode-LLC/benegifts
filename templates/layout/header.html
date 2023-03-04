@@ -1,0 +1,79 @@
+{% load static %}
+
+<!-- header Logo  -->
+<div class="row">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">
+            <i class="fa-solid fa-xmark"></i>
+        </a>
+        <ul>
+            <li>
+                <a href="{% url 'shop:index' %}#about" class="linkk">О компании</a>
+            </li>
+            <li>
+                <a href="{% url 'shop:benedict' %}" class="linkk">Benedict</a>
+            </li>
+            <li>
+                <a href="{% url 'shop:benetex' %}" class="linkk">Benetex</a>
+            </li>
+            <li>
+                <a href="{% url 'shop:logo_lay_on' %}" class="linkk">Нанесение логотипа</a>
+            </li>
+            <li>
+                <a href="https://drive.google.com/drive/folders/1gBGuvnNYMybjlfhV9qSATJug81gzpv0T" class="linkk">Cкачать
+                    каталоги</a>
+            </li>
+        </ul>
+    </div>
+    <div class="col-logo">
+        <a href="{% url 'shop:index' %}">
+            <img src="{% static 'img/benegifts-logo.svg' %}" alt="Benegifts">
+        </a>
+        <button class="openbtn" id="openbtn" onclick="openNav()">
+            <i class="fa-solid fa-bars-progress"></i>
+        </button>
+    </div>
+    <div class="col-input">
+        <button type="button" class="category-button" onclick="myFunction()">
+            <i class="fa-solid fa-bars" id="icon1"></i>
+            <!-- <i class="fa-solid fa-xmark"></i> -->
+            <span>Категории товаров</span>
+        </button>
+        <!-- After clicking button happens -->
+        <div id="myDropdown" class="dropdown-content">
+            <div class="drop-container">
+                <div class="tab">
+                    {% for item in categories %}
+                        <button class="tablinks" onmouseover="openCity(event, '{{ item.slug }}')">{{ item.name }}</button>
+                    {% endfor %}
+                </div>
+                {% for key, sub_categories in sub_categories_dict.items %}
+                    <div id="{{ key }}" class="tabcontent">
+                        <div class="section-1">
+                            <ul>
+                                {% for sub_category in sub_categories %}
+                                    <li>
+                                        <a href="{% url 'shop:category' slug=sub_category.slug %}">{{ sub_category.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- search bar -->
+        <input type="search" name="searchInput" placeholder="Искать товары" autocomplete="off" class="form-control">
+        <button type="button" class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+    <div class="col-number">
+        <a href="tel:+998990032244" class="phone-number">+998 99 003 22 44</a>
+        <a href="tel:+998990032244" class="phone-number">+998 99 003 22 44</a>
+    </div>
+</div>
+
+<!-- Vertical Tab Links for dileram && Postavshikam -->
+<div class="dileram-postavshikam">
+    <a href="javascript:void(0)" class="vertical-tab-links" id="myBtnVertical">Дилерам</a>
+    <a href="javascript:void(0)" class="vertical-tab-links" id="my2BtnVertical">Поставщикам</a>
+</div>
