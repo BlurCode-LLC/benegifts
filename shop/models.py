@@ -87,3 +87,18 @@ class News(models.Model):
     
     def __str__(self) -> str:
         return self.name
+
+
+class LogoLayOn(models.Model):
+
+    name = models.CharField(verbose_name="Имя нанесения логотипа", max_length=50)
+    image_1 = models.ImageField(verbose_name="Фото нанесения 1", upload_to="logo-lay-ons/")
+    image_2 = models.ImageField(verbose_name="Фото нанесения 2", upload_to="logo-lay-ons/")
+    image_3 = models.ImageField(verbose_name="Фото нанесения 3", upload_to="logo-lay-ons/")
+    image_4 = models.ImageField(verbose_name="Фото нанесения 4", upload_to="logo-lay-ons/")
+    video = models.CharField(verbose_name="Видео", max_length=500)
+
+    class Meta:
+        ordering = ("-id",)
+        verbose_name = "Новость"
+        verbose_name_plural = "Новости"

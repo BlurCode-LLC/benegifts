@@ -9,11 +9,11 @@
 
 
     <div class="medium-content" id="medium-content">
-        <a href="/index.html" class="top-links">Главная</a> /
-        <a href="/pages/news-page.html" class="top-links">Новости</a>
+        <a href="{% url 'shop:index' %}" class="top-links">Главная</a> /
+        <a href="{% url 'shop:benetex' %}" class="top-links">Benetex</a>
         <br>
-        <a href="#" class="benedict-url">
-            <img src="/images/Benetex.png" alt="">
+        <a href="javascript:void(0);" class="benedict-url">
+            <img src="{% static 'img/benetex.png' %}" alt="">
         </a>
         <div class="benedict-content">
             <h2 class="starting-text">Benedict</h2> <br>
@@ -50,9 +50,9 @@
         </h2>
 
         <div class="view-cards">
-            <img src="/images/view-production.png" alt="View production card 1">
-            <img src="/images/view-production.png" alt="View production card 2">
-            <img src="/images/view-production.png" alt="View production card 3">
+            <img src="{% static 'img/view-production.png' %}" alt="View production card 1">
+            <img src="{% static 'img/view-production.png' %}" alt="View production card 2">
+            <img src="{% static 'img/view-production.png' %}" alt="View production card 3">
         </div>
         <button type="button" class="view-button">Посмотреть продукцию</button>
     </div>

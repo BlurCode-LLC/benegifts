@@ -10,7 +10,21 @@ from .models import *
 admin.site.unregister(Group)
 admin.site.unregister(User)
 
-admin.site.register(Category)
+@admin.register(Category)
+class CategoryAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "name",
+        "parent_category",
+        "slug"
+    )
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "parent_category":
+            kwargs["queryset"] = Category.objects.filter(parent_category__isnull=True)
+        return super().formfield_for_foreignkey(db_field, request, **kwargs)
+
+
 admin.site.register(Product)
 admin.site.register(ProductImage)
 admin.site.register(ProductColor)
