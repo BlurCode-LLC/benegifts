@@ -23,56 +23,56 @@
                         <a href="javascript:void(0);">Посмотреть видео</a>
                     </div>
                     <div class="item-logos">
-                        <img src="{{ item.image_1.url }}" onclick="openModal();currentSlide(1)" class="mini-logos"
+                        <img src="{{ item.image_1.url }}" onclick="openModal({{ item.id }});currentSlide(1, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_2.url }}" onclick="openModal();currentSlide(2)" class="mini-logos"
+                        <img src="{{ item.image_2.url }}" onclick="openModal({{ item.id }});currentSlide(2, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_3.url }}" onclick="openModal();currentSlide(3)" class="mini-logos"
+                        <img src="{{ item.image_3.url }}" onclick="openModal({{ item.id }});currentSlide(3, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_4.url }}" onclick="openModal();currentSlide(4)" class="mini-logos"
+                        <img src="{{ item.image_4.url }}" onclick="openModal({{ item.id }});currentSlide(4, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
                     </div>
                 </div>
                 <div id="myModal{{ item.id }}" class="modal">
-                    <span class="close1 cursor" onclick="closeModal()">&times;</span>
+                    <span class="close1 cursor" onclick="closeModal({{ item.id }})">&times;</span>
                     <div class="modal-content">
-                        <div class="mySlides">
+                        <div class="mySlides{{ item.id }}">
                             <div class="numbertext">1 / 4</div>
                             <img src="{{ item.image_1.url }}" style="width:450px" alt="{{ item.name }}">
                         </div>
-                        <div class="mySlides">
+                        <div class="mySlides{{ item.id }}">
                             <div class="numbertext">2 / 4</div>
                             <img src="{{ item.image_2.url }}" style="width:450px" alt="{{ item.name }}">
                         </div>
 
-                        <div class="mySlides">
+                        <div class="mySlides{{ item.id }}">
                             <div class="numbertext">3 / 4</div>
                             <img src="{{ item.image_3.url }}" style="width:450px" alt="{{ item.name }}">
                         </div>
 
-                        <div class="mySlides">
+                        <div class="mySlides{{ item.id }}">
                             <div class="numbertext">4 / 4</div>
                             <img src="{{ item.image_4.url }}" style="width:450px" alt="{{ item.name }}">
                         </div>
                         <div class="caption-container">
-                            <p id="caption"></p>
+                            <p id="caption{{ item.id }}"></p>
                         </div>
                         <div class="selected">
                             <div class="column">
-                                <img class="demo cursor" src="{{ item.image_1.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(1)" alt="{{ item.name }}">
+                                <img class="demo{{ item.id }} cursor" src="{{ item.image_1.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(1, {{ item.id }})" alt="{{ item.name }}">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="{{ item.image_2.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(2)" alt="{{ item.name }}">
+                                <img class="demo{{ item.id }} cursor" src="{{ item.image_2.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(2, {{ item.id }})" alt="{{ item.name }}">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="{{ item.image_3.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(3)" alt="{{ item.name }}">
+                                <img class="demo{{ item.id }} cursor" src="{{ item.image_3.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(3, {{ item.id }})" alt="{{ item.name }}">
                             </div>
                             <div class="column">
-                                <img class="demo cursor" src="{{ item.image_4.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(4)" alt="{{ item.name }}">
+                                <img class="demo{{ item.id }} cursor" src="{{ item.image_4.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(4, {{ item.id }})" alt="{{ item.name }}">
                             </div>
                         </div>
                     </div>
@@ -87,60 +87,4 @@
 
 </div>
 
-{% endblock %}
-
-{% block script %}
-<script src="{% static 'js/logo-lay-on.js' %}"></script>
-<script>
-    // Modall
-    // Get the modal
-    var modal = document.getElementById("myModal");
-    var modal2 = document.getElementById("my2Modal")
-
-    // Get the button that opens the modal
-    var btn = document.getElementById("myBtn");
-    var btn2 = document.getElementById("my2Btn");
-
-    var btnVertical = document.getElementById("myBtnVerticalNanesenie");
-    var btn2Vertical = document.getElementById("my2BtnVerticalNanesenie");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-    var span2 = document.getElementsByClassName("close2")[0];
-
-    // When the user clicks the button, open the modal 
-    btn.onclick = function () {
-        modal.style.display = "block";
-    }
-    btn2.onclick = function () {
-        modal2.style.display = "block";
-    }
-    // When the user clicks the button, open the modal  (2)
-    btnVertical.onclick = function () {
-        modal.style.display = "block";
-    }
-    btn2Vertical.onclick = function () {
-        modal2.style.display = "block";
-    }
-
-    // When the user clicks on <span> (x), close the modal
-    span.onclick = function () {
-        modal.style.display = "none";
-    }
-    span2.onclick = function () {
-        modal2.style.display = "none";
-    }
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-    window.onclick = function (event) {
-        if (event.target == modal2) {
-            modal2.style.display = "none";
-        }
-    }
-</script>
 {% endblock %}
