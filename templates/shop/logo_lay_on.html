@@ -14,210 +14,72 @@
         <br>
         <h2 class="starting-text">Виды нанесения логотипа</h2>
         <div class="logotip-container">
-            <div class="logotip-content1">
+            {% for logo_lay_ons_collection in logo_lay_ons %}
+            <div class="logotip-content">
+                {% for item in logo_lay_ons_collection %}
                 <div class="logotip-item">
                     <div class="item-text">
-                        <p>Тиснение</p>
-                        <a href="#">Посмотреть видео</a>
+                        <p>{{ item.name }}</p>
+                        <a href="javascript:void(0);">Посмотреть видео</a>
                     </div>
                     <div class="item-logos">
-                        <img src="/images/Тиснение/1.png" onclick="openModal();currentSlide(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тиснение/2.png" onclick="openModal();currentSlide(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тиснение/3.png" onclick="openModal();currentSlide(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тиснение/4.png" onclick="openModal();currentSlide(4)" class="mini-logos"
-                            alt="">
+                        <img src="{{ item.image_1.url }}" onclick="openModal();currentSlide(1)" class="mini-logos"
+                            alt="{{ item.name }}">
+                        <img src="{{ item.image_2.url }}" onclick="openModal();currentSlide(2)" class="mini-logos"
+                            alt="{{ item.name }}">
+                        <img src="{{ item.image_3.url }}" onclick="openModal();currentSlide(3)" class="mini-logos"
+                            alt="{{ item.name }}">
+                        <img src="{{ item.image_4.url }}" onclick="openModal();currentSlide(4)" class="mini-logos"
+                            alt="{{ item.name }}">
                     </div>
                 </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Шелкография</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Шелкография/1.png" onclick="openModal3();currentSlide3(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Шелкография/2.png" onclick="openModal3();currentSlide3(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Шелкография/3.png" onclick="openModal3();currentSlide3(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Шелкография/4.png" onclick="openModal3();currentSlide3(4)" class="mini-logos"
-                            alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Металлостикер</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Металлостикер/1.png" onclick="openModal4();currentSlide4(1)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Металлостикер/2.png" onclick="openModal4();currentSlide4(2)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Металлостикер/3.png" onclick="openModal4();currentSlide4(3)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Металлостикер/4.png" onclick="openModal4();currentSlide4(4)"
-                            class="mini-logos" alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Лазерная
-                            гравировка</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Лазерная гравировка/1.png" onclick="openModal5();currentSlide5(1)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Лазерная гравировка/2.png" onclick="openModal5();currentSlide5(2)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Лазерная гравировка/3.png" onclick="openModal5();currentSlide5(3)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Лазерная гравировка/4.png" onclick="openModal5();currentSlide5(4)"
-                            class="mini-logos" alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Цифровая
-                            печать</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Цифровая печать/1.png" onclick="openModal6();currentSlide6(1)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Цифровая печать/2.png" onclick="openModal6();currentSlide6(2)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Цифровая печать/3.png" onclick="openModal6();currentSlide6(3)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Цифровая печать/4.png" onclick="openModal6();currentSlide6(4)"
-                            class="mini-logos" alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Сублимация на
-                            посуде, <br> футболках
-                            и сувенирах</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Сублимация на посуде, футболках и сувенирах/1.png"
-                            onclick="openModal7();currentSlide7(1)" class="mini-logos" alt="">
-                        <img src="/images/Сублимация на посуде, футболках и сувенирах/2.png"
-                            onclick="openModal7();currentSlide7(2)" class="mini-logos" alt="">
-                        <img src="/images/Сублимация на посуде, футболках и сувенирах/3.png"
-                            onclick="openModal7();currentSlide7(3)" class="mini-logos" alt="">
-                        <img src="/images/Сублимация на посуде, футболках и сувенирах/4.png"
-                            onclick="openModal7();currentSlide7(4)" class="mini-logos" alt="">
-                    </div>
-                </div>
+                <div id="myModal{{ item.id }}" class="modal">
+                    <span class="close1 cursor" onclick="closeModal()">&times;</span>
+                    <div class="modal-content">
+                        <div class="mySlides">
+                            <div class="numbertext">1 / 4</div>
+                            <img src="{{ item.image_1.url }}" style="width:450px" alt="{{ item.name }}">
+                        </div>
+                        <div class="mySlides">
+                            <div class="numbertext">2 / 4</div>
+                            <img src="{{ item.image_2.url }}" style="width:450px" alt="{{ item.name }}">
+                        </div>
 
+                        <div class="mySlides">
+                            <div class="numbertext">3 / 4</div>
+                            <img src="{{ item.image_3.url }}" style="width:450px" alt="{{ item.name }}">
+                        </div>
+
+                        <div class="mySlides">
+                            <div class="numbertext">4 / 4</div>
+                            <img src="{{ item.image_4.url }}" style="width:450px" alt="{{ item.name }}">
+                        </div>
+                        <div class="caption-container">
+                            <p id="caption"></p>
+                        </div>
+                        <div class="selected">
+                            <div class="column">
+                                <img class="demo cursor" src="{{ item.image_1.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(1)" alt="{{ item.name }}">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ item.image_2.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(2)" alt="{{ item.name }}">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ item.image_3.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(3)" alt="{{ item.name }}">
+                            </div>
+                            <div class="column">
+                                <img class="demo cursor" src="{{ item.image_4.url }}"
+                                    style="width:100px; height: 100px;" onclick="currentSlide(4)" alt="{{ item.name }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
             </div>
-            <div class="logotip-content2">
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Вышивка</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Вышивка/1.png" onclick="openModal8();currentSlide8(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Вышивка/2.png" onclick="openModal8();currentSlide8(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Вышивка/3.png" onclick="openModal8();currentSlide8(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Вышивка/4.png" onclick="openModal8();currentSlide8(4)" class="mini-logos"
-                            alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Тампопечать</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Тампопечать/1.png" onclick="openModal9();currentSlide9(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тампопечать/2.png" onclick="openModal9();currentSlide9(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тампопечать/3.png" onclick="openModal9();currentSlide9(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/Тампопечать/4.png" onclick="openModal9();currentSlide9(4)" class="mini-logos"
-                            alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>DTF печать</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/DTF печать/1.png" onclick="openModal10();currentSlide10(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/DTF печать/2.png" onclick="openModal10();currentSlide10(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/DTF печать/3.png" onclick="openModal10();currentSlide10(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/DTF печать/4.png" onclick="openModal10();currentSlide10(4)" class="mini-logos"
-                            alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>УФ-
-                            печатьь</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/УФ-печать/1.png" onclick="openModal11();currentSlide11(1)" class="mini-logos"
-                            alt="">
-                        <img src="/images/УФ-печать/2.png" onclick="openModal11();currentSlide11(2)" class="mini-logos"
-                            alt="">
-                        <img src="/images/УФ-печать/3.png" onclick="openModal11();currentSlide11(3)" class="mini-logos"
-                            alt="">
-                        <img src="/images/УФ-печать/4.png" onclick="openModal11();currentSlide11(4)" class="mini-logos"
-                            alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Надглазурная
-                            деколь</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Деколь надглазурная/1.png" onclick="openModal12();currentSlide12(1)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Деколь надглазурная/2.png" onclick="openModal12();currentSlide12(2)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Деколь надглазурная/3.png" onclick="openModal12();currentSlide12(3)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Деколь надглазурная/4.png" onclick="openModal12();currentSlide12(4)"
-                            class="mini-logos" alt="">
-                    </div>
-                </div>
-                <div class="logotip-item">
-                    <div class="item-text">
-                        <p>Изготовление
-                            наклеек</p>
-                        <a href="#">Посмотреть видео</a>
-                    </div>
-                    <div class="item-logos">
-                        <img src="/images/Изготовление наклеек/1.png" onclick="openModal13();currentSlide13(1)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Изготовление наклеек/2.png" onclick="openModal13();currentSlide13(2)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Изготовление наклеек/3.png" onclick="openModal13();currentSlide13(3)"
-                            class="mini-logos" alt="">
-                        <img src="/images/Изготовление наклеек/4.png" onclick="openModal13();currentSlide13(4)"
-                            class="mini-logos" alt="">
-                    </div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 

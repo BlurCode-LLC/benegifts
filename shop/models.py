@@ -15,6 +15,10 @@ class Category(models.Model):
 
     def __str__(self):
         return f"{self.parent_category} ({self.name})" if self.parent_category is not None else self.name
+    
+    @property
+    def sub_category_first(self):
+        return self.sub_categories.order_by("id").first()
 
 
 class Product(models.Model):
@@ -96,9 +100,34 @@ class LogoLayOn(models.Model):
     image_2 = models.ImageField(verbose_name="Фото нанесения 2", upload_to="logo-lay-ons/")
     image_3 = models.ImageField(verbose_name="Фото нанесения 3", upload_to="logo-lay-ons/")
     image_4 = models.ImageField(verbose_name="Фото нанесения 4", upload_to="logo-lay-ons/")
-    video = models.CharField(verbose_name="Видео", max_length=500)
+    video = models.CharField(verbose_name="Видео", max_length=500, blank=True, null=True)
+
+    class Meta:
+        db_table = "shop_logo_lay_on"
+        ordering = ("id",)
+        verbose_name = "Нанесение логотипа"
+        verbose_name_plural = "Нанесения логотипа"
+    
+    def __str__(self) -> str:
+        return self.name
+
+
+class Contact(models.Model):
+    
+    class ContactType(models.TextChoices):
+        CALL_ORDER = "call-order", "Звонок на заказ"
+        DEALER = "dealer", "Дилер"
+        PROVIDER = "provider", "Поставщик"
+    
+    name = models.CharField(verbose_name="Имя клиента", max_length=50)
+    phone_number = models.CharField(verbose_name="Номер телефона", max_length=20)
+    type = models.CharField(verbose_name="Тип клиента", max_length=10, choices=ContactType.choices, default=ContactType.CALL_ORDER)
+    datetime = models.DateTimeField(verbose_name="Дата и время", auto_now_add=True)
 
     class Meta:
         ordering = ("-id",)
-        verbose_name = "Новость"
-        verbose_name_plural = "Новости"
+        verbose_name = "Заявка"
+        verbose_name_plural = "Заявки"
+    
+    def __str__(self) -> str:
+        return f"{self.name} {self.phone_number}"

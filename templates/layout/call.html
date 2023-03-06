@@ -1,6 +1,9 @@
 <!-- Заказать звонок section -->
 <div class="call-section-1" id="call-section">
-    <input type="text" placeholder="Ваше имя" value="" autocomplete="off" required>
-    <input type="number" placeholder="Номер телефона" value="" autocomplete="off" required>
-    <button type="submit" class="send">Заказать звонок</button>
+    <form method="POST" action="{% url 'shop:form' type='call-order' %}">
+        {% csrf_token %}
+        {{ contact_form.name }}
+        {{ contact_form.phone_number }}
+        <button type="submit" class="send">Заказать звонок</button>
+    </form>
 </div>

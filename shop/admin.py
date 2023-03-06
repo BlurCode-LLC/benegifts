@@ -29,3 +29,19 @@ admin.site.register(Product)
 admin.site.register(ProductImage)
 admin.site.register(ProductColor)
 admin.site.register(News)
+admin.site.register(LogoLayOn)
+
+@admin.register(Contact)
+class ContactAdmin(admin.ModelAdmin):
+
+    list_display = (
+        "name",
+        "phone_number",
+        "type"
+    )
+
+    def has_add_permission(self, request, obj=None) -> bool:
+        return False
+    
+    def has_change_permission(self, request, obj=None) -> bool:
+        return False

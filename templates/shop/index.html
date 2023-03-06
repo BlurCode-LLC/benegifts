@@ -45,7 +45,7 @@
         {% for collection in categories_for_index_page %}
         <div class="column-products">
             {% for item in collection %}
-            <div class="product" onclick="window.location='{% url 'shop:category' slug=item.slug %}'"
+            <div class="product" onclick="window.location='{% if item.sub_category_first %}{% url 'shop:category' slug=item.sub_category_first.slug %}{% else %}javascript:void(0);{% endif %}'"
                 style="cursor: pointer;">
                 <img src="{{ item.image.url }}" alt="{{ item.name }}" class="{{ item.slug }}">
                 <span class="text">{{ item.name }}</span>
@@ -65,7 +65,7 @@
                 <hr>
                 {% for item in categories %}
                 <div class="accordion-content">
-                    <div class="header" {% if item.slug == 'nabor' %}id="header"{% endif %}>
+                    <div class="header" {% if item.slug == 'nabor' %}id="header" {% endif %}>
                         <span class="title">{{ item.name }}</span>
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
@@ -156,9 +156,9 @@
         <div class="slider-logo">
             <div class="slide-track">
                 {% for sponsor in sponsors %}
-                    <div class="slide-logo">
-                        <img src="{% static sponsor %}" alt="">
-                    </div>
+                <div class="slide-logo">
+                    <img src="{% static sponsor %}" alt="">
+                </div>
                 {% endfor %}
             </div>
         </div>
@@ -168,21 +168,22 @@
         <div class="carousel" data-flickity='{ "lazyLoad": true }'>
             {% for brand in brands %}
             <div class="carousel-cell">
-                <img class="carousel-cell-image" data-flickity-lazyload="{% static brand %}"
-                    alt="tulip" />
+                <img class="carousel-cell-image" data-flickity-lazyload="{% static brand %}" alt="tulip" />
             </div>
             {% endfor %}
         </div>
         <!-- Our Location -->
-        <h4 class="text-center-about">
-            Наша локация</h4>
+        <h4 class="text-center-about">Наша локация</h4>
         <div class="location-section">
-            <div class="form-content">
-                <p class="form-text">Появились вопросы? <br>Закажите звонок</p>
-                <input type="text" placeholder="Ваше имя" value="" autocomplete="off" required>
-                <input type="number" placeholder="Номер телефона" value="" autocomplete="off" required>
-                <button type="submit" class="send">Заказать звонок</button>
-            </div>
+            <form method="POST" action="{% url 'shop:form' type='call-order' %}">
+                <div class="form-content">
+                    <p class="form-text">Появились вопросы? <br>Закажите звонок</p>
+                    {% csrf_token %}
+                    {{ contact_form.name }}
+                    {{ contact_form.phone_number }}
+                    <button type="submit" class="send">Заказать звонок</button>
+                </div>
+            </form>
             <div class="map-content">
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.2364940374323!2d-122.47460878475039!3d37.71412637977059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7c4bb6f6521f%3A0x1704552fb8861a1e!2zNTUgQ2h1bWFzZXJvIERyLCBTYW4gRnJhbmNpc2NvLCBDQSA5NDEzMiwg0KHQqNCQ!5e0!3m2!1sru!2s!4v1648149694119!5m2!1sru!2s"

@@ -44,21 +44,23 @@
             <div class="drop-container">
                 <div class="tab">
                     {% for item in categories %}
-                        <button class="tablinks" onmouseover="openCity(event, '{{ item.slug }}')">{{ item.name }}</button>
+                    <button class="tablinks" onmouseover="openCity(event, '{{ item.slug }}')">{{ item.name }}</button>
                     {% endfor %}
                 </div>
-                {% for key, sub_categories in sub_categories_dict.items %}
-                    <div id="{{ key }}" class="tabcontent">
-                        <div class="section-1">
-                            <ul>
-                                {% for sub_category in sub_categories %}
-                                    <li>
-                                        <a href="{% url 'shop:category' slug=sub_category.slug %}">{{ sub_category.name }}</a>
-                                    </li>
-                                {% endfor %}
-                            </ul>
-                        </div>
+                {% for key, sub_categories_collection in sub_categories_dict.items %}
+                <div id="{{ key }}" class="tabcontent">
+                    <div class="section-1">
+                        {% for sub_categories in sub_categories_collection %}
+                        <ul>
+                            {% for sub_category in sub_categories %}
+                            <li>
+                                <a href="{% url 'shop:category' slug=sub_category.slug %}">{{ sub_category.name }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endfor %}
                     </div>
+                </div>
                 {% endfor %}
             </div>
         </div>

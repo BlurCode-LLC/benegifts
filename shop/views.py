@@ -1,11 +1,16 @@
 from django.shortcuts import (
     get_object_or_404,
-    render
+    redirect,
+    render,
+    resolve_url
 )
+from math import ceil
 from os import listdir
 
+from .forms import ContactForm
 from .models import (
     Category,
+    LogoLayOn,
     News,
     Product
 )
@@ -41,8 +46,12 @@ def benetex(request):
 
 
 def logo_lay_on(request):
+    logo_lay_ons = LogoLayOn.objects.all()
+    length = logo_lay_ons.count()
+    logo_lay_ons = [logo_lay_ons[0 : ceil(length / 2)], logo_lay_ons[ceil(length / 2) : length]]
     return render(request, "shop/logo_lay_on.html", {
-        **get_context_data()
+        **get_context_data(),
+        'logo_lay_ons': logo_lay_ons
     })
 
 
@@ -72,3 +81,11 @@ def news_detail(request, slug):
         'new': new,
         'news': news
     })
+
+
+def form(request, type):
+    form = ContactForm(request.POST)
+    contact = form.save(commit=False)
+    contact.type = type
+    contact.save()
+    return redirect(request.META.get('HTTP_REFERER') or "shop:index")
