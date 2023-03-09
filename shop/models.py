@@ -43,6 +43,10 @@ class Product(models.Model):
 
     def __str__(self):
         return f"{', '.join(str(cat_ry) for cat_ry in self.category.all())} - {self.name}"
+    
+    def product_colors_by_three(self):
+        product_colors = self.product_colors.all()
+        return [product_colors[i : i + 3] for i in range(0, product_colors.count(), 3)]
 
 
 class ProductImage(models.Model):
@@ -57,7 +61,7 @@ class ProductImage(models.Model):
         verbose_name_plural = "Фото продуктов" 
 
     def __str__(self):
-        return self.product
+        return str(self.product)
 
 
 class ProductColor(models.Model):
@@ -72,7 +76,7 @@ class ProductColor(models.Model):
         verbose_name_plural = "Цвета продуктов" 
 
     def __str__(self):
-        return self.product
+        return str(self.product)
 
 
 class News(models.Model):
