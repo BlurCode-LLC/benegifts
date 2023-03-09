@@ -118,11 +118,6 @@ window.onclick = function (event) {
     }
 }
 
-// 
-document.getElementById("focusButton").addEventListener("click", () => {
-    document.getElementById("myTextField").focus();
-});
-
 
 // Catalog tovarov in Mobile 
 // Catalog tovarov
@@ -191,6 +186,14 @@ function openModal(id) {
 
 function closeModal(id) {
     document.getElementById(`myModal${id}`).style.display = "none";
+}
+
+function openModalVideo(id) {
+    document.getElementById(`myModal${id}-video`).style.display = "block";
+}
+
+function closeModalVideo(id) {
+    document.getElementById(`myModal${id}-video`).style.display = "none";
 }
 
 var slideIndex = 1;

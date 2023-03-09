@@ -16,3 +16,5 @@ media/**/*
 gunicorn.py
 
 db.sqlite3
+
+ngrok.exe

@@ -104,7 +104,7 @@ class LogoLayOn(models.Model):
     image_2 = models.ImageField(verbose_name="Фото нанесения 2", upload_to="logo-lay-ons/")
     image_3 = models.ImageField(verbose_name="Фото нанесения 3", upload_to="logo-lay-ons/")
     image_4 = models.ImageField(verbose_name="Фото нанесения 4", upload_to="logo-lay-ons/")
-    video = models.CharField(verbose_name="Видео", max_length=500, blank=True, null=True)
+    video = models.FileField(verbose_name="Видео", upload_to="logo-lay-ons/videos/")
 
     class Meta:
         db_table = "shop_logo_lay_on"

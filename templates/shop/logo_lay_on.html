@@ -20,16 +20,20 @@
                 <div class="logotip-item">
                     <div class="item-text">
                         <p>{{ item.name }}</p>
-                        <a href="javascript:void(0);">Посмотреть видео</a>
+                        <a href="javascript:void(0);" onclick="openModalVideo({{ item.id }});">Посмотреть видео</a>
                     </div>
                     <div class="item-logos">
-                        <img src="{{ item.image_1.url }}" onclick="openModal({{ item.id }});currentSlide(1, {{ item.id }})" class="mini-logos"
+                        <img src="{{ item.image_1.url }}"
+                            onclick="openModal({{ item.id }});currentSlide(1, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_2.url }}" onclick="openModal({{ item.id }});currentSlide(2, {{ item.id }})" class="mini-logos"
+                        <img src="{{ item.image_2.url }}"
+                            onclick="openModal({{ item.id }});currentSlide(2, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_3.url }}" onclick="openModal({{ item.id }});currentSlide(3, {{ item.id }})" class="mini-logos"
+                        <img src="{{ item.image_3.url }}"
+                            onclick="openModal({{ item.id }});currentSlide(3, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
-                        <img src="{{ item.image_4.url }}" onclick="openModal({{ item.id }});currentSlide(4, {{ item.id }})" class="mini-logos"
+                        <img src="{{ item.image_4.url }}"
+                            onclick="openModal({{ item.id }});currentSlide(4, {{ item.id }})" class="mini-logos"
                             alt="{{ item.name }}">
                     </div>
                 </div>
@@ -60,21 +64,36 @@
                         <div class="selected">
                             <div class="column">
                                 <img class="demo{{ item.id }} cursor" src="{{ item.image_1.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(1, {{ item.id }})" alt="{{ item.name }}">
+                                    style="width:100px; height: 100px;" onclick="currentSlide(1, {{ item.id }})"
+                                    alt="{{ item.name }}">
                             </div>
                             <div class="column">
                                 <img class="demo{{ item.id }} cursor" src="{{ item.image_2.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(2, {{ item.id }})" alt="{{ item.name }}">
+                                    style="width:100px; height: 100px;" onclick="currentSlide(2, {{ item.id }})"
+                                    alt="{{ item.name }}">
                             </div>
                             <div class="column">
                                 <img class="demo{{ item.id }} cursor" src="{{ item.image_3.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(3, {{ item.id }})" alt="{{ item.name }}">
+                                    style="width:100px; height: 100px;" onclick="currentSlide(3, {{ item.id }})"
+                                    alt="{{ item.name }}">
                             </div>
                             <div class="column">
                                 <img class="demo{{ item.id }} cursor" src="{{ item.image_4.url }}"
-                                    style="width:100px; height: 100px;" onclick="currentSlide(4, {{ item.id }})" alt="{{ item.name }}">
+                                    style="width:100px; height: 100px;" onclick="currentSlide(4, {{ item.id }})"
+                                    alt="{{ item.name }}">
                             </div>
                         </div>
+                    </div>
+                </div>
+                <div id="myModal{{ item.id }}-video" class="modal">
+                    <span class="close1 cursor" onclick="closeModalVideo({{ item.id }})">&times;</span>
+                    <div class="modal-content">
+                        {% if item.video %}
+                        <video width="75%" height="75%" controls>
+                            <source src="{{ item.video.url }}" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        {% endif %}
                     </div>
                 </div>
                 {% endfor %}
