@@ -113,7 +113,7 @@ li .linkk {
 }
 
 .search-button {
-    padding: 7.5px 10.125px 13.5px 10px;
+    padding: 10.5px 10.125px 15.5px 10px;
     background: #383355;
     border-radius: 0px 8px 8px 0px;
     border: none;
@@ -651,9 +651,8 @@ h4 {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    padding-right: 10px;
 }
-
-
 
 .mini-section-last {
     align-items: flex-start;
@@ -1535,33 +1534,14 @@ footer .bottom-details .bottom_text {
     gap: 14px;
 }
 
-.colorList-1,
-.colorList-2,
-.colorList-3 {
+.colorList {
     display: flex;
     gap: 12px;
 }
 
-.colorList-3 button {
+.colorList button {
     width: 50px;
     height: 50px;
-    background: #FF8989;
-    border: 0.935997px solid #E1E1E1;
-    border-radius: 3.74399px;
-}
-
-.colorList-2 button {
-    width: 50px;
-    height: 50px;
-    background: #FF8989;
-    border: 0.935997px solid #E1E1E1;
-    border-radius: 3.74399px;
-}
-
-.colorList-1 button {
-    width: 50px;
-    height: 50px;
-    background: #FF8989;
     border: 0.935997px solid #E1E1E1;
     border-radius: 3.74399px;
 }
@@ -1671,7 +1651,18 @@ footer .bottom-details .bottom_text {
     cursor: pointer;
 }
 
-#myModal .modal-content, #my2Modal .modal-content {
+.carousel-cell-image {
+    display: block;
+    max-height: 100px;
+    margin: 0 auto;
+    max-width: 120px;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
+
+#myModal .modal-content,
+#my2Modal .modal-content {
     display: flex;
     position: relative;
     background-color: #fefefe;
@@ -1686,7 +1677,7 @@ footer .bottom-details .bottom_text {
     animation-duration: 0.4s;
     flex-direction: column;
     align-items: center;
-    width: 450px;
+    width: 400px;
     height: 401px;
     border-radius: 26.2305px;
     padding: 5.9033px;
@@ -1992,6 +1983,7 @@ footer .bottom-details .bottom_text {
     height: 375px;
     border-radius: 10px;
 }
+
 
 #news-items {
     margin-bottom: 50px;
@@ -2708,18 +2700,18 @@ img.hover-shadow {
     margin-right: 10px;
 }
 
-.carousel-cell-image {
-    display: block;
-    max-height: 100%;
-    margin: 0 auto;
-    max-width: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 0.4s;
-    transition: opacity 0.4s;
-}
-
 /* fade in lazy loaded image */
 .carousel-cell-image.flickity-lazyloaded,
 .carousel-cell-image.flickity-lazyerror {
     opacity: 1;
+}
+
+.flickity-page-dots {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 1;
 }

@@ -14,10 +14,9 @@
         <div class="product-into-images">
             <img src="{{ product.image.url }}" class="main-img" alt="{{ product.name }}">
             <div class="three-part-images">
-                <img src="/images/divan-1.png" alt="divan-part-1">
-                <img src="/images/divan-2.png" alt="divan-part-2">
-                <img src="/images/divan-3.png" alt="divan-part-3">
-                <img src="/images/divan-4.png" alt="divan-part-4">
+                {% for product_image in product.product_images.all %}
+                <img src="{{ product_image.image.url }}" alt="{{ product.name }}">
+                {% endfor %}
             </div>
         </div>
         <div class="product-into-sizes">
@@ -34,21 +33,13 @@
                     <p class="title-colorlist">
                         Цвета в наличии
                     </p>
-                    <div class="colorList-1">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
+                    {% for product_colors in product.product_colors_by_three %}
+                    <div class="colorList">
+                        {% for product_color in product_colors %}
+                        <button style="background-color: {{ product_color.color }};"></button>
+                        {% endfor %}
                     </div>
-                    <div class="colorList-2">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                    </div>
-                    <div class="colorList-3">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <hr>
@@ -63,5 +54,30 @@
         <strong>Описание</strong>
         {{ product.description | safe }}
     </div>
+    <div id="myZakazModal" class="modalZakaz">
+        <form method="POST" action="{% url 'shop:form' type='product-order' %}">
+            <!-- Modal content -->
+            <div class="modal-content-zakaz">
+                <div class="modal-header">
+                    <p class="form-text-zakaz">Оформление заявки <br>
+                        на приобретение <br>
+                        товара</p>
+                    <span class="close-zakaz">&times;</span>
+                </div>
+                {% csrf_token %}
+                {{ order_form.name }}
+                {{ order_form.phone_number }}
+                {{ order_form.order }}
+                <button type="submit" class="send">Заказать звонок</button>
+            </div>
+        </form>
+    </div>
 </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/product.js' %}"></script>
+<script>
+
+</script>
 {% endblock %}

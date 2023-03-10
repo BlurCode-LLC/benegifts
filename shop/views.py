@@ -21,7 +21,7 @@ def index(request):
     context_data = get_context_data()
     categories = context_data['categories']
     categories_for_index_page = [categories[i : i + 6] for i in range(0, len(categories), 6)]
-    news = News.objects.all()[:5]
+    news = News.objects.all()[:3]
     sponsors = [f"img/sponsors/{item}" for item in listdir("static/img/sponsors")]
     brands = [f"img/brands/{item}" for item in listdir("static/img/brands")]
     return render(request, "shop/index.html", {
@@ -69,13 +69,14 @@ def product_detail(request, slug):
     product: Product = get_object_or_404(Product, slug=slug)
     return render(request, "shop/product.html", {
         **get_context_data(),
-        'product': product
+        'product': product,
+        'order_form': ContactForm(initial={'order': product.id})
     })
 
 
 def news_detail(request, slug):
     new: News = get_object_or_404(News, slug=slug)
-    news = News.objects.exclude(id=new.id)[:5]
+    news = News.objects.exclude(id=new.id)[:3]
     return render(request, "shop/news.html", {
         **get_context_data(),
         'new': new,
@@ -84,6 +85,7 @@ def news_detail(request, slug):
 
 
 def form(request, type):
+    print(request.POST)
     form = ContactForm(request.POST)
     contact = form.save(commit=False)
     contact.type = type

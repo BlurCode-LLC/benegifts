@@ -3,9 +3,9 @@
         gap: 180px;
     }
 
-    .search-button {
+    /* .search-button {
         padding: 7.5px 10.125px 13.2px 10px;
-    }
+    } */
 
     .call-section {
         padding: 20px 190px;
@@ -446,6 +446,18 @@
 
 /* Mobile media */
 @media only screen and (max-width:601px) {
+    .forma-otpravki {
+        row-gap: 15px;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+
+    .news-item-image {
+        width: 380px;
+        height: 375px;
+        border-radius: 10px;
+    }
 
     .dileram-postavshikam {
         padding: 0 70px;
@@ -520,14 +532,14 @@
         display: none;
     }
 
-    .search-button {
+    /* .search-button {
         padding: 7.7px 10.125px 12.9px 10px;
         background: #383355;
         border-radius: 0px 8px 8px 0px;
         border: none;
         color: #FFFFFF;
         margin-left: -5.5px;
-    }
+    } */
 
     .category-button i {
         font-size: 18px;
@@ -580,6 +592,7 @@
         text-align: center;
         align-items: center;
         justify-content: center;
+        row-gap: 15px;
     }
 
     .call-section-1 input {
@@ -744,6 +757,12 @@
 }
 
 @media only screen and (max-width:426px) {
+    .news-item-image {
+        width: 370px;
+        height: 375px;
+        border-radius: 10px;
+    }
+
     .buttonss {
         display: flex;
         flex-direction: column;
@@ -1058,7 +1077,7 @@
     }
 
     .search-button {
-        padding: 7.7px 10.125px 13.2px 10px;
+        padding: 11px 15.125px 15.2px 11px;
         background: #383355;
         border-radius: 0px 8px 8px 0px;
         border: none;
