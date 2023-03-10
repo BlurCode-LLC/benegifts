@@ -2705,3 +2705,13 @@ img.hover-shadow {
 .carousel-cell-image.flickity-lazyerror {
     opacity: 1;
 }
+
+.flickity-page-dots {
+    position: absolute;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    line-height: 1;
+}
