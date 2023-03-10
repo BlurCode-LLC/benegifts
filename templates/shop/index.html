@@ -164,7 +164,7 @@
         </div>
 
         <!-- Our brands section -->
-        <h4 class="text-center-about">Наши бренды</h4>
+        <h4 class="text-center-about" id="ourBrands">Наши бренды</h4>
         <div class="carousel" data-flickity='{ "lazyLoad": true }'>
             {% for brand in brands %}
             <div class="carousel-cell">
@@ -173,7 +173,7 @@
             {% endfor %}
         </div>
         <!-- Our Location -->
-        <h4 class="text-center-about">Наша локация</h4>
+        <h4 class="text-center-about" id="ourLocation">Наша локация</h4>
         <div class="location-section">
             <form method="POST" action="{% url 'shop:form' type='call-order' %}">
                 <div class="form-content">

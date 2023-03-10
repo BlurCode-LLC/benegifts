@@ -446,6 +446,17 @@
 
 /* Mobile media */
 @media only screen and (max-width:601px) {
+    .forma-otpravki { 
+        row-gap: 15px;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+    }
+    .news-item-image {
+        width: 380px;
+        height: 375px;
+        border-radius: 10px;
+    }
 
     .dileram-postavshikam {
         padding: 0 70px;
@@ -580,6 +591,7 @@
         text-align: center;
         align-items: center;
         justify-content: center;
+        row-gap: 15px;
     }
 
     .call-section-1 input {
@@ -744,6 +756,11 @@
 }
 
 @media only screen and (max-width:426px) {
+    .news-item-image {
+        width: 370px;
+        height: 375px;
+        border-radius: 10px;
+    }
     .buttonss {
         display: flex;
         flex-direction: column;

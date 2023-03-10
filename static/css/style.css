@@ -651,9 +651,8 @@ h4 {
     align-items: flex-start;
     display: flex;
     flex-direction: column;
+    padding-right: 10px;
 }
-
-
 
 .mini-section-last {
     align-items: flex-start;
@@ -1670,7 +1669,15 @@ footer .bottom-details .bottom_text {
     text-decoration: none;
     cursor: pointer;
 }
-
+.carousel-cell-image {
+    display: block;
+    max-height: 100px;
+    margin: 0 auto;
+    max-width: 120px;
+    opacity: 0;
+    -webkit-transition: opacity 0.4s;
+    transition: opacity 0.4s;
+}
 #myModal .modal-content, #my2Modal .modal-content {
     display: flex;
     position: relative;
@@ -1686,7 +1693,7 @@ footer .bottom-details .bottom_text {
     animation-duration: 0.4s;
     flex-direction: column;
     align-items: center;
-    width: 450px;
+    width: 400px;
     height: 401px;
     border-radius: 26.2305px;
     padding: 5.9033px;
@@ -1992,6 +1999,7 @@ footer .bottom-details .bottom_text {
     height: 375px;
     border-radius: 10px;
 }
+
 
 #news-items {
     margin-bottom: 50px;
