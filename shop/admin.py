@@ -82,7 +82,8 @@ class ContactAdmin(admin.ModelAdmin):
     list_display = (
         "name",
         "phone_number",
-        "type"
+        "type",
+        "order"
     )
 
     def has_add_permission(self, request, obj=None) -> bool:

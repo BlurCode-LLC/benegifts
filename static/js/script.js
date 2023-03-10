@@ -17,52 +17,66 @@ function openCity(evt, cityName) {
 function myFunction() {
     //  Offcanvas section
     var x = document.getElementById("myDropdown");
-    if (x.style.display === "block") {
-        x.style.display = "none";
-    } else {
-        x.style.display = "block";
+    if (x) {
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
     }
     // Slider
     let slayder = document.getElementById("slider");
-    if (slayder.style.display === "none") {
-        slayder.style.display = "block";
-    } else {
-        slayder.style.display = "none";
+    if (slayder) {
+        if (slayder.style.display === "none") {
+            slayder.style.display = "block";
+        } else {
+            slayder.style.display = "none";
+        }
     }
     // Product items
     let pr_items = document.getElementById("product-container");
-    if (pr_items.style.display === "none") {
-        pr_items.style.display = "block";
-    } else {
-        pr_items.style.display = "none";
+    if (pr_items) {
+        if (pr_items.style.display === "none") {
+            pr_items.style.display = "block";
+        } else {
+            pr_items.style.display = "none";
+        }
     }
     // Call section
     let call_items = document.getElementById("call-section");
-    if (call_items.style.display === "none") {
-        call_items.style.display = "block";
-    } else {
-        call_items.style.display = "none";
+    if (call_items) {
+        if (call_items.style.display === "none") {
+            call_items.style.display = "block";
+        } else {
+            call_items.style.display = "none";
+        }
     }
     // Medium content
     let md_items = document.getElementById("medium-content");
-    if (md_items.style.display === "none") {
-        md_items.style.display = "block";
-    } else {
-        md_items.style.display = "none";
+    if (md_items) {
+        if (md_items.style.display === "none") {
+            md_items.style.display = "block";
+        } else {
+            md_items.style.display = "none";
+        }
     }
     // Footer
     let footer_items = document.getElementById("footer");
-    if (footer_items.style.display === "none") {
-        footer_items.style.display = "block";
-    } else {
-        footer_items.style.display = "none";
+    if (footer_items) {
+        if (footer_items.style.display === "none") {
+            footer_items.style.display = "block";
+        } else {
+            footer_items.style.display = "none";
+        }
     }
     // Change bar icon to close icon
     let icon = document.getElementById("icon1");
-    if (icon.className == "fa-solid fa-bars") {
-        icon.className = "fa-solid fa-xmark"
-    } else {
-        icon.className = "fa-solid fa-bars"
+    if (icon) {
+        if (icon.className == "fa-solid fa-bars") {
+            icon.className = "fa-solid fa-xmark"
+        } else {
+            icon.className = "fa-solid fa-bars"
+        }
     }
 }
 
@@ -70,7 +84,7 @@ function myFunction() {
 // Modall
 // Get the modal
 var modal = document.getElementById("myModal");
-var modal2 = document.getElementById("my2Modal")
+var modal2 = document.getElementById("my2Modal");
 
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
@@ -173,13 +187,6 @@ function removeOpen(index1) {
     });
 }
 
-// default open after clicking button
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").focus();
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("header").click();
-
 function openModal(id) {
     document.getElementById(`myModal${id}`).style.display = "block";
 }
@@ -220,9 +227,6 @@ function showSlides(n, id) {
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    console.log(slides);
-    console.log(slideIndex);
-    console.log(slides[slideIndex - 1]);
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
     captionText.innerHTML = dots[slideIndex - 1].alt;

@@ -120,12 +120,14 @@ class Contact(models.Model):
     
     class ContactType(models.TextChoices):
         CALL_ORDER = "call-order", "Звонок на заказ"
+        PRODUCT_ORDER = "product-order", "Заказ продукта"
         DEALER = "dealer", "Дилер"
         PROVIDER = "provider", "Поставщик"
     
     name = models.CharField(verbose_name="Имя клиента", max_length=50)
     phone_number = models.CharField(verbose_name="Номер телефона", max_length=20)
-    type = models.CharField(verbose_name="Тип клиента", max_length=10, choices=ContactType.choices, default=ContactType.CALL_ORDER)
+    type = models.CharField(verbose_name="Тип клиента", max_length=20, choices=ContactType.choices, default=ContactType.CALL_ORDER)
+    order = models.ForeignKey(Product, verbose_name="Продукт", on_delete=models.CASCADE, related_name="product_contacts", blank=True, null=True)
     datetime = models.DateTimeField(verbose_name="Дата и время", auto_now_add=True)
 
     class Meta:
@@ -134,4 +136,4 @@ class Contact(models.Model):
         verbose_name_plural = "Заявки"
     
     def __str__(self) -> str:
-        return f"{self.name} {self.phone_number}"
+        return f"{self.name} ({self.phone_number})" + (f" - {str(self.order)}" if self.order else "")

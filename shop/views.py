@@ -69,7 +69,8 @@ def product_detail(request, slug):
     product: Product = get_object_or_404(Product, slug=slug)
     return render(request, "shop/product.html", {
         **get_context_data(),
-        'product': product
+        'product': product,
+        'order_form': ContactForm(initial={'order': product.id})
     })
 
 
@@ -84,6 +85,7 @@ def news_detail(request, slug):
 
 
 def form(request, type):
+    print(request.POST)
     form = ContactForm(request.POST)
     contact = form.save(commit=False)
     contact.type = type

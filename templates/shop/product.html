@@ -55,20 +55,29 @@
         {{ product.description | safe }}
     </div>
     <div id="myZakazModal" class="modalZakaz">
-
-        <!-- Modal content -->
-        <div class="modal-content-zakaz">
-            <div class="modal-header">
-                <p class="form-text-zakaz">Оформление заявки <br>
-                    на приобретение <br>
-                    товара</p>
-                <span class="close-zakaz">&times;</span>
+        <form method="POST" action="{% url 'shop:form' type='product-order' %}">
+            <!-- Modal content -->
+            <div class="modal-content-zakaz">
+                <div class="modal-header">
+                    <p class="form-text-zakaz">Оформление заявки <br>
+                        на приобретение <br>
+                        товара</p>
+                    <span class="close-zakaz">&times;</span>
+                </div>
+                {% csrf_token %}
+                {{ order_form.name }}
+                {{ order_form.phone_number }}
+                {{ order_form.order }}
+                <button type="submit" class="send">Заказать звонок</button>
             </div>
-            <input type="text" placeholder="Ваше имя" value="" autocomplete="off" required>
-            <input type="number" placeholder="Номер телефона" value="" autocomplete="off" required>
-            <button type="submit" class="send">Заказать звонок</button>
-        </div>
-
+        </form>
     </div>
 </div>
+{% endblock %}
+
+{% block script %}
+<script src="{% static 'js/product.js' %}"></script>
+<script>
+
+</script>
 {% endblock %}
