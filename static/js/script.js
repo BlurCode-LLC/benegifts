@@ -136,7 +136,7 @@ window.onclick = function (event) {
 // Catalog tovarov in Mobile 
 // Catalog tovarov
 function myCatalogyDrop() {
-    document.getElementById("catalogyy-tovarov").classList.toggle("show");
+    document.getElementById("catalogy-tovarov").classList.toggle("show");
 }
 
 // Close the dropdown if the user clicks outside of it

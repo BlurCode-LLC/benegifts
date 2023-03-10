@@ -113,7 +113,7 @@ li .linkk {
 }
 
 .search-button {
-    padding: 7.5px 10.125px 13.5px 10px;
+    padding: 10.5px 10.125px 15.5px 10px;
     background: #383355;
     border-radius: 0px 8px 8px 0px;
     border: none;
@@ -1650,6 +1650,7 @@ footer .bottom-details .bottom_text {
     text-decoration: none;
     cursor: pointer;
 }
+
 .carousel-cell-image {
     display: block;
     max-height: 100px;
@@ -1659,7 +1660,9 @@ footer .bottom-details .bottom_text {
     -webkit-transition: opacity 0.4s;
     transition: opacity 0.4s;
 }
-#myModal .modal-content, #my2Modal .modal-content {
+
+#myModal .modal-content,
+#my2Modal .modal-content {
     display: flex;
     position: relative;
     background-color: #fefefe;
@@ -2695,16 +2698,6 @@ img.hover-shadow {
     width: 66%;
     height: 100px;
     margin-right: 10px;
-}
-
-.carousel-cell-image {
-    display: block;
-    max-height: 100%;
-    margin: 0 auto;
-    max-width: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 0.4s;
-    transition: opacity 0.4s;
 }
 
 /* fade in lazy loaded image */

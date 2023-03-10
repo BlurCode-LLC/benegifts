@@ -4,17 +4,17 @@
         <div class="link-boxes">
             <ul class="box">
                 <!-- <li class="link_name">Документы</li> -->
-                <li><a href="javascript:void(0);">О компании</a></li>
-                <li><a href="javascript:void(0);">Benedict</a></li>
-                <li><a href="javascript:void(0);">Benetex</a></li>
-                <li><a href="javascript:void(0);">Нанесение логотипа</a></li>
+                <li><a href="{% url 'shop:index' %}#about">О компании</a></li>
+                <li><a href="{% url 'shop:benedict' %}">Benedict</a></li>
+                <li><a href="{% url 'shop:benetex' %}">Benetex</a></li>
+                <li><a href="{% url 'shop:logo_lay_on' %}">Нанесение логотипа</a></li>
             </ul>
             <ul class="box">
                 <!-- <li class="link_name">Сервис</li> -->
-                <li><a href="javascript:void(0);">Категории</a></li>
-                <li><a href="javascript:void(0);">Новости</a></li>
-                <li><a href="javascript:void(0);">Наши бренды</a></li>
-                <li><a href="javascript:void(0);">Наша локация</a></li>
+                <li><a href="{% url 'shop:index' %}#product-container">Категории</a></li>
+                <li><a href="{% url 'shop:index' %}#medium-content">Новости</a></li>
+                <li><a href="{% url 'shop:index' %}#ourBrands">Наши бренды</a></li>
+                <li><a href="{% url 'shop:index' %}#ourLocation">Наша локация</a></li>
             </ul>
             <ul class="box">
                 <!-- <li class="link_name">Каталог товаров</li> -->

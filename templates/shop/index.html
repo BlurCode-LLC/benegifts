@@ -59,7 +59,7 @@
     <button onclick="myCatalogyDrop()" class="button-catalogg">Выбрать категорию</button>
 
     <div class="ct-tovar">
-        <div class="sidebar-menu" id="catalogyy-tovarov">
+        <div class="sidebar-menu" id="catalogy-tovarov">
             <div class="accordion">
                 <h2 class="catalog-title">Категории</h2>
                 <hr>
@@ -72,7 +72,7 @@
                     <ul class="description">
                         {% for sub_category in item.sub_categories.all %}
                         <li>
-                            <a href="{% url 'shop:category' slug=sub_category.slug %}" class="descript-link">
+                            <a href="{% url 'shop:category' slug=sub_category.slug %}" {% if item.slug == 'biznes-nabor' %}id="defaultOpen" class="descript-link"{% endif %}>
                                 {{ sub_category.name }}
                             </a>
                         </li>
