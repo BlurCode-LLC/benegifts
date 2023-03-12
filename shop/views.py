@@ -1,8 +1,7 @@
 from django.shortcuts import (
     get_object_or_404,
     redirect,
-    render,
-    resolve_url
+    render
 )
 from math import ceil
 from os import listdir
@@ -85,7 +84,6 @@ def news_detail(request, slug):
 
 
 def form(request, type):
-    print(request.POST)
     form = ContactForm(request.POST)
     contact = form.save(commit=False)
     contact.type = type
