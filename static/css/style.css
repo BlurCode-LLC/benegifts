@@ -1313,7 +1313,8 @@ footer .bottom-details .bottom_text {
     display: flex;
     flex-direction: row;
     margin-bottom: 60px;
-    gap: 250px !important
+    gap: 100px !important;
+    justify-content: center;
 }
 
 #medium-content {

@@ -19,7 +19,7 @@
                 {% for item in logo_lay_ons_collection %}
                 <div class="logotip-item">
                     <div class="item-text">
-                        <p>{{ item.name }}</p>
+                        <p>{{ item.name | safe }}</p>
                         <a href="javascript:void(0);" onclick="openModalVideo({{ item.id }});">Посмотреть видео</a>
                     </div>
                     <div class="item-logos">
