@@ -13,13 +13,14 @@
     <div class="benedict-content">
         <h2 class="starting-text">{{ new.name }}</h2> <br>
         {{ new.content | safe }}
+        <img src="{{ new.image.url }}" class="news-item-image" alt="{{ new.name }}">
     </div>
     {% if news %}
         <h4 class="text-center">Другие новости</h4>
         <div class="news-section" id="news-items">
             {% for item in news %}
             <div class="card">
-                <a href="">
+                <a href="{% url 'shop:news' slug=item.slug %}">
                     <img src="{{ item.image.url }}" alt="{{ item.name }}">
                 </a>
                 <div class="data-part">

@@ -2023,6 +2023,7 @@ footer .bottom-details .bottom_text {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    margin-left: 50px;
 }
 
 /* The Close Button */
@@ -2143,12 +2144,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close3 {
     color: white;
@@ -2191,12 +2186,6 @@ img.hover-shadow {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
 }
 
 /* The Close Button */
@@ -2243,12 +2232,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close5 {
     color: white;
@@ -2291,12 +2274,6 @@ img.hover-shadow {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
 }
 
 /* The Close Button */
@@ -2343,12 +2320,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close7 {
     color: white;
@@ -2391,12 +2362,6 @@ img.hover-shadow {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
 }
 
 /* The Close Button */
@@ -2444,12 +2409,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close9 {
     color: white;
@@ -2492,12 +2451,6 @@ img.hover-shadow {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
 }
 
 /* The Close Button */
@@ -2544,12 +2497,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close11 {
     color: white;
@@ -2594,12 +2541,6 @@ img.hover-shadow {
     justify-content: center;
 }
 
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
-}
-
 /* The Close Button */
 .close12 {
     color: white;
@@ -2642,12 +2583,6 @@ img.hover-shadow {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-
-.selected {
-    display: flex;
-    flex-direction: column;
-    row-gap: 15px;
 }
 
 /* The Close Button */
