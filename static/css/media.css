@@ -1370,6 +1370,11 @@
     .closebtn {
         margin-left: 320px;
     }
+
+    .item-logos {
+        gap: 8.5px;
+        margin-left: 5px;
+    }
 }
 
 @media only screen and (max-width: 401px) {
@@ -1382,9 +1387,10 @@
     }
 
     .news-item-image {
-        width: 370px;
-        height: 375px;
+        width: 350px;
+        height: 350px;
         border-radius: 10px;
+        margin-right: 15px;
     }
 }
 
@@ -1601,5 +1607,10 @@
 
     .view-button {
         margin-left: 20px;
+    }
+
+    .item-logos {
+        gap: 5px;
+        width: 300px;
     }
 }

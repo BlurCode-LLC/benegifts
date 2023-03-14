@@ -6,8 +6,8 @@
 
 {% block content %}
 <div class="medium-content" id="medium-content">
-    <a href="/index.html" class="top-links">Главная</a> /
-    <a href="/pages/news-page.html" class="top-links">Новости</a>
+    <a href="{% url 'shop:index' %}" class="top-links">Главная</a> /
+    <a href="{% url 'shop:category' slug=category.slug %}" class="top-un-links">{{ category.name }}</a>
     <br>
     <!-- When mobile size is be active, this toggle is be active momentally -->
     <button onclick="myCatalogyDrop()" class="button-catalog">Выбрать категорию</button>

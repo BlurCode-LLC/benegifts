@@ -6,9 +6,9 @@
 
 {% block content %}
 <div class="medium-content" id="medium-content">
-    <a href="/index.html" class="top-links">Главная</a> /
-    <a href="/pages/podarok.html" class="top-links">Подарки</a> /
-    <a href="#" class="top-un-links">Название подарка</a>
+    <a href="{% url 'shop:index' %}" class="top-links">Главная</a> /
+    <a href="{% url 'shop:category' slug=category.slug %}" class="top-links">{{ category.name }}</a> /
+    <a href="{% url 'shop:product' slug=product.slug %}" class="top-un-links">{{ product.name }}</a>
     <!-- part of product image and description, color, size, weight -->
     <div class="into-product">
         <div class="product-into-images">

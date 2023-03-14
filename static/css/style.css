@@ -1312,8 +1312,8 @@ footer .bottom-details .bottom_text {
 .logotip-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-bottom: 60px;
+    gap: 250px !important
 }
 
 #medium-content {
@@ -1966,6 +1966,7 @@ footer .bottom-details .bottom_text {
 
 .ending-description {
     margin-top: 29px;
+    width: 70%;
 
 }
 
@@ -2714,4 +2715,10 @@ img.hover-shadow {
     list-style: none;
     text-align: center;
     line-height: 1;
+}
+
+.logotip-item {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
 }

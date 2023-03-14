@@ -20,3 +20,5 @@ gunicorn.py
 db.sqlite3
 
 ngrok.exe
+
+.DS_Store

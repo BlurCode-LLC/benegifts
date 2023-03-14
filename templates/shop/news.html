@@ -6,8 +6,9 @@
 
 {% block content %}
 <div class="medium-content" id="medium-content">
-    <a href="/index.html" class="top-links">Главная</a> /
-    <a href="/pages/news-page.html" class="top-links">Новости</a>
+    <a href="{% url 'shop:index' %}" class="top-links">Главная</a> /
+    <a href="{% url 'shop:index' %}#medium-content" class="top-links">Новости</a> /
+    <a href="{% url 'shop:news' slug=new.slug %}" class="top-un-links">{{ new.name }}</a>
     <br>
     <div class="benedict-content">
         <h2 class="starting-text">{{ new.name }}</h2> <br>

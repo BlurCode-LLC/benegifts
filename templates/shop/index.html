@@ -45,7 +45,8 @@
         {% for collection in categories_for_index_page %}
         <div class="column-products">
             {% for item in collection %}
-            <div class="product" onclick="window.location='{% if item.sub_category_first %}{% url 'shop:category' slug=item.sub_category_first.slug %}{% else %}javascript:void(0);{% endif %}'"
+            <div class="product"
+                onclick="window.location='{% if item.sub_category_first %}{% url 'shop:category' slug=item.sub_category_first.slug %}{% else %}javascript:void(0);{% endif %}'"
                 style="cursor: pointer;">
                 <img src="{{ item.image.url }}" alt="{{ item.name }}" class="{{ item.slug }}">
                 <span class="text">{{ item.name }}</span>
@@ -72,7 +73,7 @@
                     <ul class="description">
                         {% for sub_category in item.sub_categories.all %}
                         <li>
-                            <a href="{% url 'shop:category' slug=sub_category.slug %}" {% if item.slug == 'biznes-nabor' %}id="defaultOpen" class="descript-link"{% endif %}>
+                            <a href="{% url 'shop:category' slug=sub_category.slug %}" {% if item.slug == 'biznes-nabor' %}id="defaultOpen" class="descript-link" {% endif %}>
                                 {{ sub_category.name }}
                             </a>
                         </li>
@@ -186,8 +187,8 @@
             </form>
             <div class="map-content">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3156.2364940374323!2d-122.47460878475039!3d37.71412637977059!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f7c4bb6f6521f%3A0x1704552fb8861a1e!2zNTUgQ2h1bWFzZXJvIERyLCBTYW4gRnJhbmNpc2NvLCBDQSA5NDEzMiwg0KHQqNCQ!5e0!3m2!1sru!2s!4v1648149694119!5m2!1sru!2s"
-                    style="border:0; border-radius: 26.2305px;" allowfullscreen="" loading="lazy"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7609.302803850238!2d69.26637182430865!3d41.299585420295685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b4c09937635%3A0xd13469e31301fd8c!2sBenegifts!5e0!3m2!1sen!2s!4v1678612514248!5m2!1sen!2s"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </div>
@@ -199,5 +200,4 @@
 
 {% block script %}
 <script src="{% static 'js/carousel.js' %}"></script>
-<script src="{% static 'js/index.js' %}"></script>
 {% endblock %}

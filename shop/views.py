@@ -66,9 +66,11 @@ def category_detail(request, slug):
 
 def product_detail(request, slug):
     product: Product = get_object_or_404(Product, slug=slug)
+    category: Category = product.category.first()
     return render(request, "shop/product.html", {
         **get_context_data(),
         'product': product,
+        'category': category,
         'order_form': ContactForm(initial={'order': product.id})
     })
 
